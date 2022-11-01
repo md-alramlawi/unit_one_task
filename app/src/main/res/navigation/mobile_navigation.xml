@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_flights"
+        android:name="com.alramlawi.unitonetask.ui.FlightsFragment"
+        android:label="@string/title_flight"
+        tools:layout="@layout/fragment_flights" />
+
+    <fragment
+        android:id="@+id/navigation_hotels"
+        android:name="com.alramlawi.unitonetask.ui.HotelsFragment"
+        android:label="@string/title_hotels"
+        tools:layout="@layout/fragment_hotels" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.alramlawi.unitonetask.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeDestination_to_loginFragment"
+            app:destination="@+id/navigation_login"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.alramlawi.unitonetask.ui.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.alramlawi.unitonetask.ui.SettingsFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.alramlawi.unitonetask.ui.auth.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginDestination_to_homeFragment"
+            app:destination="@+id/navigation_home"/>
+
+    </fragment>
+
+</navigation>
