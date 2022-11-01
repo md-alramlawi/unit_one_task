@@ -81,13 +81,19 @@ class LoginFragment : Fragment() {
     private fun login(){
         val phone = binding.edtPhone.text.toString()
 
-        if(phone.length >= 9){
-            val phoneNumber = "+970$phone".trim()
-            sendCode(phoneNumber)
-
-        }else{
-            binding.edtPhone.requestFocus()
-            binding.edtPhone.error = "Enter valid number"
+        when (phone.length) {
+            9 -> {
+                val phoneNumber = "+9700$phone".trim()
+                sendCode(phoneNumber)
+            }
+            10 -> {
+                val phoneNumber = "+970$phone".trim()
+                sendCode(phoneNumber)
+            }
+            else -> {
+                binding.edtPhone.requestFocus()
+                binding.edtPhone.error = "Enter valid number"
+            }
         }
     }
 
