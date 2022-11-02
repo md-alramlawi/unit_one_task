@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_flights"
+        app:showAsAction="always"
         android:icon="@drawable/flights"
         android:title="@string/title_flight" />
 
     <item
+        app:showAsAction="always"
         android:id="@+id/navigation_hotels"
         android:icon="@drawable/hotels"
         android:title="@string/title_hotels" />
 
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/home"
-        android:title="@string/title_home" />
 
     <item
+        app:showAsAction="always"
         android:id="@+id/navigation_search"
         android:icon="@drawable/search"
         android:title="@string/title_search" />
 
     <item
+        app:showAsAction="always"
         android:id="@+id/navigation_settings"
         android:icon="@drawable/settings"
         android:title="@string/title_setting" />

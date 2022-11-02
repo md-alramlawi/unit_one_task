@@ -1,6 +1,5 @@
 package com.alramlawi.unitonetask.ui.home
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.alramlawi.unitonetask.data.CityRepository
@@ -24,11 +23,11 @@ object DefaultViewModelProvider : ViewModelFactoryProvider {
         )
     }
 
-    override fun provideHomeViewModelFactory(context: Context): PlantsViewModelFactory {
+    override fun provideHomeViewModelFactory(): PlantsViewModelFactory {
         val repository = getPlantRepository()
         return PlantsViewModelFactory(repository)
     }
 }
 interface ViewModelFactoryProvider {
-    fun provideHomeViewModelFactory(context: Context): PlantsViewModelFactory
+    fun provideHomeViewModelFactory(): PlantsViewModelFactory
 }

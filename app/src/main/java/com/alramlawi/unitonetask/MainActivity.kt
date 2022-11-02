@@ -27,11 +27,15 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_flights,
                 R.id.navigation_hotels,
-                R.id.navigation_home,
                 R.id.navigation_search,
                 R.id.navigation_settings,
             )
         )
+
+        binding.fab.setOnClickListener {
+            navController.navigate(R.id.navigation_home)
+        }
+
         supportActionBar?.hide()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)

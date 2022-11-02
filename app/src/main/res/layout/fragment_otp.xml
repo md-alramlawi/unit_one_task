@@ -29,6 +29,8 @@
 
 
         <EditText
+            android:gravity="center"
+            android:inputType="number"
             android:id="@+id/edt_otp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

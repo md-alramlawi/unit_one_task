@@ -12,12 +12,11 @@ import androidx.navigation.fragment.findNavController
 import com.alramlawi.unitonetask.R
 import com.alramlawi.unitonetask.databinding.FragmentHomeBinding
 import com.alramlawi.unitonetask.ui.home.DefaultViewModelProvider.provideHomeViewModelFactory
-import me.relex.circleindicator.CircleIndicator
 
 class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by viewModels {
-        provideHomeViewModelFactory(requireContext())
+        provideHomeViewModelFactory()
     }
 
     private var _binding: FragmentHomeBinding? = null

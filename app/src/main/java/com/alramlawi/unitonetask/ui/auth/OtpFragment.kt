@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.alramlawi.unitonetask.databinding.FragmentOtpBinding
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
-import java.util.concurrent.TimeUnit
 
 class OtpFragment(
     val onEntered: (String) -> Unit
@@ -28,9 +25,12 @@ class OtpFragment(
 
         binding.confirm.setOnClickListener {
             val opt = binding.edtOtp.text.toString()
-            if(opt.length >= 5){
+            if(opt.length == 6){
                 onEntered(opt)
                 dismiss()
+            }else{
+                binding.edtOtp.requestFocus()
+                binding.edtOtp.error = "Enter 6-digits code"
             }
         }
         return binding.root
